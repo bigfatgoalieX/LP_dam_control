@@ -28,8 +28,8 @@ y_diff = y_real - y_optimal
 z_diff = z_real - z_optimal
 w_diff = w_real - w_optimal
 #取决于地形
-alpha = 0.3
-beta = 0.2
+alpha = 0.35
+beta = 0.4
 
 #sign
 #0000
@@ -41,8 +41,8 @@ sign4 = 1
 def LPfunction():
     problem = pulp.LpProblem("Optimization Problem", pulp.LpMinimize)
 
-    P_min = -0.1*0.001
-    P_max = 0.1*0.001
+    P_min = -0.09*0.001
+    P_max = 0.09*0.001
 
 # 定义LP中的变量_两个大坝的放水量
     P1 = pulp.LpVariable('P1', lowBound=P_min, upBound=P_max)
@@ -77,18 +77,18 @@ def LPfunction():
 
     # 求解线性规划问题
     problem.solve()
-
+    
     if(pulp.LpStatus[problem.status] == "Infeasible"):
         with open('output_Jan.txt', 'a') as file:
-            sys.exit()
+            pass
             # print("Failed",file=file)
     else:
-        with open('output_Jan.txt', 'a') as file:
+        with open('output_Feb.txt', 'a') as file:
         # 使用 print() 函数将数据写入文件
             print(pulp.LpStatus[problem.status],file=file)
             print("Optimal values:",file=file)
             for v in problem.variables():
-                print(v.varValue," km",file=file)
+                print(v.varValue*1000," m",file=file)
             print(pulp.value(problem.objective)," m",file=file)
             print("if doing nothing:",abs(x_diff) + abs(y_diff) + abs(z_diff) + abs(w_diff),file=file)
             print("\n",file=file)
