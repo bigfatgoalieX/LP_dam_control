@@ -41,8 +41,8 @@ sign4 = 1
 def LPfunction():
     problem = pulp.LpProblem("Optimization Problem", pulp.LpMinimize)
 
-    P_min = -0.09*0.001
-    P_max = 0.09*0.001
+    P_min = -0.12*0.001
+    P_max = 0.12*0.001
 
 # 定义LP中的变量_两个大坝的放水量
     P1 = pulp.LpVariable('P1', lowBound=P_min, upBound=P_max)
@@ -79,11 +79,9 @@ def LPfunction():
     problem.solve()
     
     if(pulp.LpStatus[problem.status] == "Infeasible"):
-        with open('output_Jan.txt', 'a') as file:
-            pass
-            # print("Failed",file=file)
+        pass
     else:
-        with open('output_Feb.txt', 'a') as file:
+        with open('output_Dec.txt', 'a') as file:
         # 使用 print() 函数将数据写入文件
             print(pulp.LpStatus[problem.status],file=file)
             print("Optimal values:",file=file)
