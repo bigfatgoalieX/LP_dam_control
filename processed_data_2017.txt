@@ -1,0 +1,47 @@
+January:
+0.6174 m
+if doing nothing: 0.7100 m
+
+February:
+0.4074  m
+if doing nothing: 0.5000 m
+
+March:
+0.1274  m
+if doing nothing: 0.2200 m
+
+April:
+0.1957  m
+if doing nothing: 0.3300 m
+
+May:
+0.6934  m
+if doing nothing: 0.7860 m
+
+June:
+0.2847  m
+if doing nothing: 0.4385 m
+
+July:
+0.2540  m
+if doing nothing: 0.3775 m
+
+August:
+0.0662 m
+if doing nothing: 0.2032 m
+
+September:
+0.6422  m
+if doing nothing: 0.7657 m
+
+October:
+0.6123  m
+if doing nothing: 0.7323 m 
+
+November:
+0.4650  m
+if doing nothing: 0.5850 m
+
+December:
+0.6452  m
+if doing nothing: 0.7990 m
